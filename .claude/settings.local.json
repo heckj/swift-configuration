@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(technical-reviewer)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -95,7 +95,7 @@ For comprehensive guidance on handling secrets securely, see <doc:Handling-secre
 
 ### Prefer optional over required
 
-Only mark configuration as required if your library absolutely cannot function without it. For most cases, 
+Only mark configuration as required if your library absolutely can't function without it. For most cases, 
 provide sensible defaults and make configuration optional.
 
 ```swift

@@ -147,7 +147,7 @@ For a selection of more detailed examples, read through <doc:Example-use-cases>.
 
 For a video introduction, check out our [talk on YouTube](https://www.youtube.com/watch?v=I3lYW6OEyIs).
 
-These providers can be combined to form a hierarchy, for details check out <doc:Provider-hierarchy>.
+You can combine these providers to form a hierarchy, for details check out <doc:Provider-hierarchy>.
 
 ### Quick start
 
@@ -225,8 +225,7 @@ The library provides three distinct ways to read configuration values:
   ```
 
 For detailed guidance on when to use each access pattern, see <doc:Choosing-access-patterns>.
-Within each of the access patterns, the library offers different reader methods that reflect your needs of 
-optional, default, and required configuration parameters.
+Within each of the access patterns, the library offers different reader methods that reflect your needs for optional, default, and required configuration parameters.
 To understand the choices available, see <doc:Choosing-reader-methods>.
 
 #### Providers
@@ -351,7 +350,7 @@ let privateKey = try snapshot.requiredString(forKey: "mtls.privateKey", isSecret
 let optionalAPIToken = config.string(forKey: "api.token", isSecret: true)
 ```
 
-When values are marked as secrets, they are automatically redacted from access logs and debugging output. 
+When values are marked as secrets, they're automatically redacted from access logs and debugging output. 
 Read <doc:Handling-secrets-correctly> for guidance on best practices for secrets management.
 
 #### Consistent snapshots
@@ -359,9 +358,8 @@ Read <doc:Handling-secrets-correctly> for guidance on best practices for secrets
 Retrieve related values from a consistent snapshot using ``ConfigSnapshotReader``, which you
 get by calling ``ConfigReader/snapshot()``.
 
-This ensures that multiple values are read from a single snapshot inside each provider, even when using
-providers that update their internal values.
-For example by downloading new data periodically:
+This ensures that multiple values are read from a single snapshot inside each provider, even when using providers that update their internal values.
+For example, by downloading new data periodically:
 
 ```swift
 let config = /* a reader with one or more providers that change values over time */

@@ -26,9 +26,8 @@ The package contains several Swift targets organized by functionality:
 
 #### Running CI checks locally
 
-You can run the Github Actions workflows locally using
-[act](https://github.com/nektos/act). To run all the jobs that run on a pull
-request, use the following command:
+You can run the Github Actions workflows locally using [act](https://github.com/nektos/act).
+To run all the jobs that run on a pull request, use the following command:
 
 ```
 % act pull_request
@@ -49,9 +48,7 @@ reflected in your working directory:
 % act --bind workflow_call -j soundness --input format_check_enabled=true
 ```
 
-If you'd like `act` to always run with certain flags, these can be be placed in
-an `.actrc` file either in the current working directory or your home
-directory, for example:
+If you'd like `act` to always run with certain flags, you can place these in an `.actrc` file either in the current working directory or your home directory, for example:
 
 ```
 --container-architecture=linux/amd64
@@ -75,7 +72,8 @@ After running this script, also [run the formatter](#code-formatting) before ope
 
 #### Code formatting
 
-The project uses swift-format for consistent code style. You can run CI checks locally using [`act`](https://github.com/nektos/act).
+The project uses swift-format for consistent code style.
+You can run CI checks locally using [`act`](https://github.com/nektos/act).
 
 To run formatting checks:
 

@@ -24,7 +24,7 @@ variable name above `SERVER_PORT`.
 
 ### Reading from a JSON configuration file
 
-You can store multiple configuration values together in a JSON file and read them from the fileystem using ``FileProvider`` with ``JSONSnapshot``.
+You can store multiple configuration values together in a JSON file and read them from the filesystem using ``FileProvider`` with ``JSONSnapshot``.
 The following example creates a ``ConfigReader`` for a JSON file at the path `/etc/config.json`, and reads a url and port
 number collected as properties of the `database` JSON object:
 
@@ -53,8 +53,8 @@ The matching JSON for this configuration might look like:
 
 ### Reading from a directory of secret files
 
-Use the ``DirectoryFilesProvider`` to read multiple values collected together in a directory on the fileystem, each 
-in a separate file. The default directory key encoder uses a hyphen in the filename to separate key components.
+Use the ``DirectoryFilesProvider`` to read multiple values collected together in a directory on the filesystem, each in a separate file.
+The default directory key encoder uses a hyphen in the filename to separate key components.
 The following example uses the directory `/run/secrets` as a base, and reads the file `database-password` as 
 the key `database.password`:
 
@@ -72,14 +72,14 @@ let config = ConfigReader(
 let dbPassword = config.string(forKey: "database.password")
 ```
 
-This pattern is useful for reading secrets that your infrastructure makes available on the file system, 
-such as Kubernetes secrets mounted into a container's filesystem.
+This pattern is useful for reading secrets that your infrastructure makes available on the file system, such as Kubernetes secrets mounted into a container's filesystem.
 
 > Tip: For comprehensive guidance on handling secrets securely, see <doc:Handling-secrets-correctly>.
 
 ### Handling optional configuration files
 
-File-based providers support an `allowMissing` parameter to control whether missing files should throw an error or be treated as empty configuration. This is useful when configuration files are optional.
+File-based providers support an `allowMissing` parameter to control whether missing files should throw an error or be treated as empty configuration.
+This is useful when configuration files are optional.
 
 When `allowMissing` is `false` (the default), missing files throw an error:
 
@@ -140,13 +140,13 @@ let reloadingConfig = ConfigReader(
 )
 ```
 
-> Important: The `allowMissing` parameter only affects missing files. Malformed files, such as invalid JSON and YAML syntax errors will still throw parsing errors regardless of this setting.
+> Important: The `allowMissing` parameter only affects missing files.
+> Malformed files, such as invalid JSON and YAML syntax errors will still throw parsing errors regardless of this setting.
 
 ### Setting up a fallback hierarchy
 
 Use multiple providers together to provide a configuration hierarchy that can override values at different levels.
-The following example uses both an environment variable provider and a JSON provider together, with values from 
-environment variables overriding values from the JSON file.
+The following example uses both an environment variable provider and a JSON provider together, with values from environment variables overriding values from the JSON file.
 In this example, the defaults are provided using an ``InMemoryProvider``, which are only read if the environment 
 variable or the JSON key don't exist:
 
